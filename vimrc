@@ -10,6 +10,7 @@ set encoding=utf-8
 
 set nocompatible
 filetype off
+set nobackup
 
 " Vundle 
 set rtp+=~/.vim/bundle/vundle/
@@ -48,6 +49,9 @@ Bundle 'Lokaltog/vim-powerline'
 Bundle 'kien/ctrlp.vim'
 Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/neocomplcache-snippets-complete'
+Bundle 'rodjek/vim-puppet'
+Bundle 'tfnico/vim-gradle'
+Bundle 'Blackrush/vim-gocode'
 " }}}
 
 "Bundle 'VimClojure'
@@ -459,7 +463,11 @@ vnoremap ar a[
 
 " set guifont=Andale\ Mono\ for\ Powerline
 "
+set guifont=Source\ Code\ Pro\ for\ Powerline:h14
 
 au FileType xml setlocal equalprg=xmllint\ --format\ --recover\ -\ 2>/dev/null
 
+
+
+au! BufRead,BufNewFile *.pp setfiletype puppet
 
